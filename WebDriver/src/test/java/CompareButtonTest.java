@@ -54,8 +54,6 @@ public class CompareButtonTest {
 //                .click();
 
         driver.navigate().to("https://5element.by/compare");
-        driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
 
         String expected = "Игровой ноутбук ASUS TUF Gaming FX505DV-HN279";
         String actualTextButton = (new WebDriverWait(driver, 100))
