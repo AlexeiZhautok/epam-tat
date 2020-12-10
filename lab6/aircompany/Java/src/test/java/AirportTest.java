@@ -56,7 +56,7 @@ public class AirportTest {
     }
 
     @Test
-    public void test3() {
+    public void testIsCorrectplanesSortedByMaxLoadCapacity () {
         Airport airport = new Airport(planes);
         airport.sortByMaxLoadCapacity();
         List<? extends Plane> planesSortedByMaxLoadCapacity = airport.getPlanes();
@@ -83,10 +83,9 @@ public class AirportTest {
                 flag = true;
             }
             else {
-                Assert.fail("Test failed!");
+                Assert.fail("testHasAtLeastOneBomberInMilitaryPlanes failed!");
             }
         }
-        // if not failed
     }
 
     @Test
