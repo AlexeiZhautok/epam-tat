@@ -1,6 +1,7 @@
 package page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 public class ProductPage {
     private final int WAIT_TIMEOUT_SECOND = 50;
@@ -46,6 +48,14 @@ public class ProductPage {
 //    @FindBy(xpath = XPATH_FOR_HEADLINE)
 //    private WebElement headline;
 
+    public ProductPage getDataId(String dataid){
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))
+                .click();
+        dataid =  new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON))).getAttribute("data-id");
+        return this;
+    }
+
     public ProductPage(WebDriver driver){
         this.driver = driver;
             PageFactory.initElements(driver, this);
@@ -53,18 +63,26 @@ public class ProductPage {
 
     public ProductPage openPage() {
         driver.get(HOMEPAGE_URL);
-        dataId = new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON))).getAttribute("data-id");
         return this;
     }
 
-    public ProductPage checkInterferingNotifications() throws AWTException {
-        if(new WebDriverWait(driver,WAIT_TIMEOUT_SECOND).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))){
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ESCAPE);
-            robot.keyRelease(KeyEvent.VK_ESCAPE);
+    public ProductPage checkInterferingNotifications(){
+//        System.out.println(new WebDriverWait(driver,WAIT_TIMEOUT_SECOND).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='backdrop-close'"))));
+//        if(!(new WebDriverWait(driver,WAIT_TIMEOUT_SECOND).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='backdrop-close'"))))){
+////            Robot robot = new Robot();
+////            robot.keyPress(KeyEvent.VK_ESCAPE);
+////            robot.keyRelease(KeyEvent.VK_ESCAPE);
 //            new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-//                    .until(ExpectedConditions.	elementToBeClickable(By.xpath("//div[@class='backdrop-close'")))
+//                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='backdrop-close'")))
 //                    .click();
+//        }
+        try {
+            new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
+                        .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='backdrop-close']")))
+                    .click();
+        }
+        catch (TimeoutException e){
+            System.out.println("11");
         }
         return this;
     }
@@ -114,6 +132,6 @@ public class ProductPage {
     }
 
     public String findAddedElementDataId(){
-        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON))).getAttribute("data-id"));
+        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='product-item product-item-shortblock item js-product-item']"))).getAttribute("data-id"));
     }
 }

@@ -18,7 +18,7 @@ import page.ProductPage;
 public class CompareButtonTest {
 
     private WebDriver driver;
-    private String pageDataId;
+    private String pageDataId = "0";
 
     @BeforeTest(alwaysRun = true)
     public void browserSetup(){
@@ -49,13 +49,15 @@ public class CompareButtonTest {
 
     @Test(enabled = true)
     public void compareButtonWorkingTest() throws AWTException {
+//        pageDataId = new ProductPage(driver).getDataId();
         String actualAddedElementDataId = new ProductPage(driver)
                 .openPage()
-                .checkInterferingNotifications()
+                .getDataId(pageDataId)
                 .pressCompareButtonForAdd()
                 .openComparePage(driver)
+                .checkInterferingNotifications()
                 .findAddedElementDataId();
-        driver = new ChromeDriver();
+
         Assert.assertEquals(pageDataId, actualAddedElementDataId,"there isn't compare object.");
     }
 
