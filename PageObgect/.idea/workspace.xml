@@ -2,13 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f5d93d6-627c-4688-9c5e-dffc86bdecad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../FavoritesButtonTest.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PageObgect.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/page/ComparePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/page/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/page/ComparePage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/page/ProductPage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/test/CompareButtonTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/test/CompareButtonTestOld.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WebDriver/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FavoritesButtonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CompareButtonTestOld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebDriver/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebDriver/WebDriver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/WebDriver.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/src/test/java/CompareButtonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/src/test/java/CompareButtonTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebDriver/target/test-classes/CompareButtonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../WebDriver/target/test-classes/CompareButtonTest.class" afterDir="false" />
@@ -26,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+            <state relative-caret-position="141">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/page/ProductPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="65" column="88" selection-start-line="65" selection-start-column="88" selection-end-line="65" selection-end-column="88" />
+            <state relative-caret-position="246">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +103,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/test/CompareButtonTestOld.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/ComparePage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/page/ProductPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java" />
       </list>
     </option>
   </component>
@@ -228,17 +242,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607798917833</updated>
-      <workItem from="1607798921231" duration="12110000" />
+      <workItem from="1607798921231" duration="12414000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CompareButtonTest_(1) - 2020.12.12 at 22h 16m 02s.xml">
-      <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CompareButtonTest_(1) - 2020.12.12 at 23h 22m 31s.xml">
-      <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CompareButtonTest_(1) - 2020.12.12 at 23h 24m 15s.xml">
       <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
     </history-entry>
@@ -263,9 +271,15 @@
     <history-entry file="CompareButtonTest_(1) - 2020.12.13 at 01h 03m 21s.xml">
       <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="CompareButtonTest_(1) - 2020.12.13 at 01h 18m 24s.xml">
+      <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CompareButtonTest_(1) - 2020.12.13 at 01h 20m 19s.xml">
+      <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12110000" />
+    <option name="totallyTimeSpent" value="12414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -358,8 +372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        <state relative-caret-position="141">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -368,8 +382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/page/ProductPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="65" column="88" selection-start-line="65" selection-start-column="88" selection-end-line="65" selection-end-column="88" />
+        <state relative-caret-position="246">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
