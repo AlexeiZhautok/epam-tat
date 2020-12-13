@@ -8,9 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.Assert;
 
 import page.ProductPage;
@@ -20,20 +18,32 @@ public class CompareButtonTest {
     private WebDriver driver;
     private String pageDataId = "0";
 
-    @BeforeTest(alwaysRun = true)
-    public void browserSetup(){
+    @BeforeMethod(alwaysRun = true)
+    public void browserSetupReload(){
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
-    @Test (enabled = true)
-    public void valueOfTheCompareIndicatorWhenAdding() {
+    @AfterMethod(alwaysRun = true)
+    public void browserClose() {
+        driver.close();
+    }
+
+    @AfterTest(alwaysRun = true)
+    public void browserTearDown() {
+        driver.quit();
+        driver = null;
+    }
+
+    @Test (enabled = true, priority = 2)
+    public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
+        Thread.sleep(2000);
          String actualIndicatorValue = new ProductPage(driver)
                 .openPage()
                 .pressCompareButtonForAdd()
                 .getIndicatorValue();
-        Assert.assertEquals("1", actualIndicatorValue,"Indicator does't work.");
+        Assert.assertEquals(actualIndicatorValue, "1","Indicator does't work.");
     }
 
 //    @Test (enabled = true)
@@ -47,23 +57,15 @@ public class CompareButtonTest {
 //        Assert.assertEquals("0", actualIndicatorValue, "Indicator does't work.");
 //    }
 
-    @Test(enabled = true)
+    @Test(enabled = true, priority = 1)
     public void compareButtonWorkingTest() throws AWTException {
 //        pageDataId = new ProductPage(driver).getDataId();
         String actualAddedElementDataId = new ProductPage(driver)
                 .openPage()
-                .getDataId(pageDataId)
                 .pressCompareButtonForAdd()
                 .openComparePage(driver)
                 .checkInterferingNotifications()
                 .findAddedElementDataId();
-
-        Assert.assertEquals(pageDataId, actualAddedElementDataId,"there isn't compare object.");
-    }
-
-    @AfterTest(alwaysRun = true)
-    public void browserTearDown() {
-        driver.quit();
-        driver = null;
+        Assert.assertEquals(actualAddedElementDataId, new ProductPage(driver).returnDriverToTheProductPage().getDataId(),"there isn't compare object."+pageDataId);
     }
 }

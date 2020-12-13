@@ -25,7 +25,7 @@ public class ProductPage {
 //    private final static String XPATH_FOR_HEADLINE = "//h1[@class='cont-hd-alt widget-query-heading']";
 
     private WebDriver driver;
-    private String dataId = "0";
+    private String dataId;
 
 //    @FindBy(xpath = "//input[@id='qf-0q-destination']")
 //    private WebElement placeInput;
@@ -48,12 +48,12 @@ public class ProductPage {
 //    @FindBy(xpath = XPATH_FOR_HEADLINE)
 //    private WebElement headline;
 
-    public ProductPage getDataId(String dataid){
+    public String getDataId(){
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))
                 .click();
-        dataid =  new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON))).getAttribute("data-id");
-        return this;
+        return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON))).getAttribute("data-id");
+//        System.out.println(dataid);
     }
 
     public ProductPage(WebDriver driver){
@@ -63,6 +63,7 @@ public class ProductPage {
 
     public ProductPage openPage() {
         driver.get(HOMEPAGE_URL);
+
         return this;
     }
 
@@ -133,5 +134,10 @@ public class ProductPage {
 
     public String findAddedElementDataId(){
         return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='product-item product-item-shortblock item js-product-item']"))).getAttribute("data-id"));
+    }
+
+    public ProductPage returnDriverToTheProductPage(){
+        driver.get(HOMEPAGE_URL);
+        return this;
     }
 }
