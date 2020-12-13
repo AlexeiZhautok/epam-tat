@@ -2,11 +2,7 @@ package test;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
-import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.*;
 import org.testng.Assert;
@@ -36,30 +32,28 @@ public class CompareButtonTest {
         driver = null;
     }
 
-    @Test (enabled = true, priority = 2)
+    @Test (enabled = true)
     public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
         Thread.sleep(2000);
          String actualIndicatorValue = new ProductPage(driver)
                 .openPage()
                 .pressCompareButtonForAdd()
-                .getIndicatorValue();
+                .getIndicatorValueByActiveClass();
         Assert.assertEquals(actualIndicatorValue, "1","Indicator does't work.");
     }
 
-//    @Test (enabled = true)
-//    public void valueOfTheCompareIndicatorWhenDelete() {
-//        String actualIndicatorValue = new ProductPage(driver)
-//                .openPage()
-//                .checkInterferingNotifications()
-//                .pressCompareButtonForAdd()
-//                .pressCompareButtonForDelete()
-//                .getIndicatorValue();
-//        Assert.assertEquals("0", actualIndicatorValue, "Indicator does't work.");
-//    }
+    @Test (enabled = true)
+    public void valueOfTheCompareIndicatorWhenDelete() {
+        String actualIndicatorValue = new ProductPage(driver)
+                .openPage()
+                .pressCompareButtonForAdd()
+                .pressCompareButtonForDelete()
+                .getIndicatorValueById();
+        Assert.assertEquals(actualIndicatorValue,"0", "Indicator does't work.");
+    }
 
-    @Test(enabled = true, priority = 1)
-    public void compareButtonWorkingTest() throws AWTException {
-//        pageDataId = new ProductPage(driver).getDataId();
+    @Test(enabled = true)
+    public void compareButtonWorkingTest() {
         String actualAddedElementDataId = new ProductPage(driver)
                 .openPage()
                 .pressCompareButtonForAdd()
