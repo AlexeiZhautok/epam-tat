@@ -25,7 +25,7 @@ public class ComparePage {
                     .click();
         }
         catch (TimeoutException e){
-            System.out.println("На этой странице не было ");
+            System.out.println("На этой странице не было предупреждения");
         }
         return this;
     }

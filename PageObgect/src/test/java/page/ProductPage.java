@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ProductPage {
     private final int WAIT_TIMEOUT_SECOND = 50;
 
-    private static final String HOMEPAGE_URL = "https://5element.by/products/691383-igrovoy-noutbuk-asus-tuf-gaming-fx505dv-hn279";
+    private static final String HOMEPAGE_URL = "https://5element.by/products/682273-noutbuk-lenovo-ideapad-3-15iml05-81wb00jwre";
     private final static String XPATH_FOR_DESCRIPTION_TEXT = "//section[@id='description']";
     private final static String XPATH_FOR_ADD_TO_COMPARE_BUTTON = "//div[@class='btn-product-actions']/div[1]";
     private final static String XPATH_FOR_VALUE_INDICATOR = "//span[@id='compare-count-extra']";
@@ -31,11 +31,6 @@ public class ProductPage {
 
     @FindBy(xpath = XPATH_FOR_LINK_TO_COMPARE_PAGE)
     private WebElement openComparePageBytton;
-//    @FindBy(xpath = XPATH_FOR_COMPARE_PANEL)
-//    private WebElement addToCompareButton;
-//
-//    @FindBy(xpath = XPATH_FOR_HEADLINE)
-//    private WebElement headline;
 
     public String getDataId(){
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
@@ -76,14 +71,6 @@ public class ProductPage {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
                 .click();
-
-//        boolean r;
-//        r = (new WebDriverWait(driver, 100))
-//                .until(ExpectedConditions
-//                        .not(ExpectedConditions
-//                                .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='compare-count-active']"))));
-//        if((new WebDriverWait(driver, 100))
-//                .until(ExpectedConditions.attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR),"class","compare-count-active"))){}
         return this;
     }
 
