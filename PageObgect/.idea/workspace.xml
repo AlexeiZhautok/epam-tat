@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f5d93d6-627c-4688-9c5e-dffc86bdecad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/ComparePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/ComparePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/ProductPage.java" afterDir="false" />
-    </list>
+    <list default="true" id="4f5d93d6-627c-4688-9c5e-dffc86bdecad" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,10 +12,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
+            <state relative-caret-position="1134">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -28,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/page/ProductPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="108" selection-start-line="108" selection-end-line="110" selection-end-column="25" />
+            <state relative-caret-position="-1254">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/page/ComparePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="609">
               <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -219,14 +215,11 @@
       <updated>1607798917833</updated>
       <workItem from="1607798921231" duration="21370000" />
       <workItem from="1607865575579" duration="5046000" />
-      <workItem from="1608152063989" duration="1036000" />
+      <workItem from="1608152063989" duration="1619000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CompareButtonTest_(1) - 2020.12.13 at 17h 39m 25s.xml">
-      <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CompareButtonTest_(1) - 2020.12.13 at 17h 42m 15s.xml">
       <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
     </history-entry>
@@ -254,13 +247,15 @@
     <history-entry file="CompareButtonTest_(1) - 2020.12.17 at 00h 12m 49s.xml">
       <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="CompareButtonTest_(1) - 2020.12.17 at 00h 13m 56s.xml">
+      <configuration name="CompareButtonTest (1)" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27452000" />
+    <option name="totallyTimeSpent" value="28035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -275,7 +270,7 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.21529745" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.21529745" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -328,9 +323,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/CompareButtonTestOld.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/page/ProductPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/page/ComparePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="609">
           <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -340,18 +345,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/CompareButtonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
+        <state relative-caret-position="1134">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/page/ProductPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="108" selection-start-line="108" selection-end-line="110" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
