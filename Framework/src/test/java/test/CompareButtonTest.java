@@ -9,28 +9,9 @@ import org.testng.Assert;
 
 import page.ProductPage;
 
-public class CompareButtonTest {
+public class CompareButtonTest extends CommonConditions {
 
-    private WebDriver driver;
     private String pageDataId = "0";
-
-    @BeforeMethod(alwaysRun = true)
-    public void browserSetupReload(){
-
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void browserClose() {
-        driver.close();
-    }
-
-    @AfterTest(alwaysRun = true)
-    public void browserTearDown() {
-        driver.quit();
-        driver = null;
-    }
 
     @Test (enabled = true)
     public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
@@ -47,7 +28,8 @@ public class CompareButtonTest {
         String actualIndicatorValue = new ProductPage(driver)
                 .openPage()
                 .pressCompareButtonForAdd()
-                .pressCompareButtonForDelete()
+                .pressCompareButtonForAdd()
+//                .pressCompareButtonForDelete()
                 .getIndicatorValueById();
         Assert.assertEquals(actualIndicatorValue,"0", "Indicator does't work.");
     }
@@ -63,3 +45,4 @@ public class CompareButtonTest {
         Assert.assertEquals(actualAddedElementDataId, new ProductPage(driver).returnDriverToTheProductPage().getDataId(),"there isn't compare object."+pageDataId);
     }
 }
+//assertNotEquals

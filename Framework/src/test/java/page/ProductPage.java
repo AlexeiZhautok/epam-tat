@@ -2,8 +2,6 @@ package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ProductPage {
     private final int WAIT_TIMEOUT_SECOND = 50;
 
-    private static final String HOMEPAGE_URL = "https://5element.by/products/682273-noutbuk-lenovo-ideapad-3-15iml05-81wb00jwre";
+    private static final String HOMEPAGE_URL = "https://5element.by/products/681507-ultrabuk-asus-zenbook-14-ux431fa-am119";
     private final static String XPATH_FOR_DESCRIPTION_TEXT = "//section[@id='description']";
     private final static String XPATH_FOR_ADD_TO_COMPARE_BUTTON = "//div[@class='btn-product-actions']/div[1]";
     private final static String XPATH_FOR_VALUE_INDICATOR = "//span[@id='compare-count-extra']";
@@ -19,23 +17,41 @@ public class ProductPage {
 
     private WebDriver driver;
     private String dataId;
+    private boolean isPress = false;
+    private int usuakButtonPosition;
 
-    @FindBy(xpath = XPATH_FOR_DESCRIPTION_TEXT)
-    private WebElement productDescriptionFind;
 
-    @FindBy(xpath = XPATH_FOR_ADD_TO_COMPARE_BUTTON)
-    private WebElement compareButtonFind;
+//    @FindBy(xpath = XPATH_FOR_DESCRIPTION_TEXT)
+//    private WebElement productDescriptionFind;
+//
+//    @FindBy(xpath = XPATH_FOR_ADD_TO_COMPARE_BUTTON)
+//    private WebElement compareButtonFind;
+//
+//    @FindBy(xpath = XPATH_FOR_VALUE_INDICATOR)
+//    private WebElement valueIndicatoOfCompareProduct;
+//
+//    @FindBy(xpath = XPATH_FOR_LINK_TO_COMPARE_PAGE)
+//    private WebElement openComparePageBytton;
 
-    @FindBy(xpath = XPATH_FOR_VALUE_INDICATOR)
-    private WebElement valueIndicatoOfCompareProduct;
+    public ProductPage openPage() {
+        driver.get(HOMEPAGE_URL);
+        return this;
+    }
 
-    @FindBy(xpath = XPATH_FOR_LINK_TO_COMPARE_PAGE)
-    private WebElement openComparePageBytton;
-
-    public String getDataId(){
+    private void cliclToDescription(){
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))
                 .click();
+    }
+
+    private String getUseualButtonPosition(){
+        return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))
+                .getAttribute("background-position");
+    }
+
+    public String getDataId(){
+        this.cliclToDescription();
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
                 .getAttribute("data-id");
@@ -46,33 +62,29 @@ public class ProductPage {
         PageFactory.initElements(driver, this);
     }
 
-    public ProductPage openPage() {
-        driver.get(HOMEPAGE_URL);
-        return this;
-    }
-
     public ProductPage pressCompareButtonForAdd(){
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))
-                .click();
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
-                .click();
-        return this;
-    }
-
-    public ProductPage pressCompareButtonForDelete(){
-        (new WebDriverWait(driver, 100))
+        if(!isPress)
+            (new WebDriverWait(driver, 100))
                 .until(ExpectedConditions
                         .attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR),"class","compare-count-active"));
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_DESCRIPTION_TEXT)))
-                .click();
+        this.cliclToDescription();
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
                 .click();
+        isPress = !isPress;
         return this;
     }
+
+//    public ProductPage pressCompareButtonForDelete(){
+//        (new WebDriverWait(driver, 100))
+//                .until(ExpectedConditions
+//                        .attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR),"class","compare-count-active"));
+//        this.cliclToDescription();
+//        new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
+//                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
+//                .click();
+//        return this;
+//    }
 
     public String getIndicatorValueById(){
         boolean r;
