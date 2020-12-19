@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ComparePage {
-    private final int WAIT_TIMEOUT_SECOND = 50;
+    private final int WAIT_TIMEOUT_SECOND = 20;
 
     private WebDriver driver;
 
