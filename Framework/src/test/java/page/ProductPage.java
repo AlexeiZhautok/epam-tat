@@ -1,9 +1,6 @@
 package page;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -131,6 +128,17 @@ public class ProductPage extends AbstractPage {
         }
         catch (TimeoutException e){
             System.out.println("На этой странице не было предупреждения");
+        }
+        return this;
+    }
+
+    public ProductPage acceptAlert(){
+        try{
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+        catch (NoAlertPresentException e){
+            System.out.println("Алёрта не было в этот раз");
         }
         return this;
     }

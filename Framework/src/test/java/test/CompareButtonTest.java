@@ -5,6 +5,8 @@ import org.testng.Assert;
 
 import page.ProductPage;
 
+import service.TestDataReader;
+
 public class CompareButtonTest extends CommonConditions {
 
     private String pageDataId = "0";
@@ -12,9 +14,11 @@ public class CompareButtonTest extends CommonConditions {
 
     @Test (enabled = true)
     public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
-        System.out.println(System.getProperty("browser"));
+//        System.out.println(System.getProperty("browser"));
+//        System.out.println(TestDataReader.getTestData("testdata.user.name"));
          String usualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
+                 .acceptAlert()
 //                .pressCompareButtonForAdd()
                 .getUseualButtonPosition();
 //                .getIndicatorValueByActiveClass();
