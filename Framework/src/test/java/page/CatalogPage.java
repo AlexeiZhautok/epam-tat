@@ -35,11 +35,6 @@ public class CatalogPage extends AbstractPage  {
     }
 
     public String getFirstItemName() {
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         return firstItemName.getText();
     }
 

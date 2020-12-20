@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11bb1256-c960-41b1-8f5d-d0e7f26e2afc" name="Default Changelist" comment="" />
+    <list default="true" id="11bb1256-c960-41b1-8f5d-d0e7f26e2afc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Framework/src/test/java/page/CatalogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Framework/src/test/java/page/CatalogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Framework/src/test/java/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Framework/src/test/java/page/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Framework/src/test/java/page/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Framework/src/test/java/page/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Framework/src/test/java/test/CompareButtonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Framework/src/test/java/test/CompareButtonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Framework/src/test/java/test/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Framework/src/test/java/test/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Framework/src/test/resousces/dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Framework/src/test/resousces/dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/CompareButtonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+            <state relative-caret-position="240">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="569">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -40,6 +49,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -61,28 +73,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
               <item name="WebDriver" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="hello-webdriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="WebDriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
             <path>
               <item name="WebDriver" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="hello-webdriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="WebDriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="WebDriver" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="hello-webdriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="WebDriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="WebDriver" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="hello-webdriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="WebDriver" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -91,13 +104,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../epam-tat/WebDriver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -196,6 +208,7 @@
       <workItem from="1607567289989" duration="139000" />
       <workItem from="1607611431984" duration="1286000" />
       <workItem from="1607789334606" duration="9025000" />
+      <workItem from="1608490744124" duration="52000" />
     </task>
     <servers />
   </component>
@@ -232,7 +245,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36190000" />
+    <option name="totallyTimeSpent" value="36242000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -247,7 +260,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13087249" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1328859" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -359,27 +372,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/FavoritesButtonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="54" column="72" selection-end-line="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/FavoritesButtonTest.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CompareButtonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        <state relative-caret-position="240">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

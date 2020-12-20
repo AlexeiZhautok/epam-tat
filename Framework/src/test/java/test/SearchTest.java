@@ -9,16 +9,15 @@ import service.TestDataReader;
 public class SearchTest extends CommonConditions {
 
     private static final String QUERY_PROPERTY = "testdata.query";
-    private static final String QUERY_PROPERTY_TYPE = "testdata.query.type";
 
     @Test
-    public void testPresenceAfterSearch() {
+    public void findProductAfterSearchTest() {
         String expected = TestDataReader.getTestData(QUERY_PROPERTY);
         String type = TestDataReader.getTestData(QUERY_PROPERTY);
         String actual = new MainPage(driver)
                 .openPage()
                 .acceptAlert()
-                .searchForQuery(expected,type)
+                .searchForQuery(expected)
                 .getFirstItemName();
         LogManager.getRootLogger().info("Checking that '" + actual + "' contatins '" + expected + "'");
         Assert.assertTrue(actual.toLowerCase().contains(expected.toLowerCase()));

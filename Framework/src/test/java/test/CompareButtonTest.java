@@ -9,20 +9,16 @@ import service.TestDataReader;
 
 public class CompareButtonTest extends CommonConditions {
 
-    private String pageDataId = "0";
-    private static final String PRODUCT_LINK_PROPERTY = "https://5element.by/products/681507-ultrabuk-asus-zenbook-14-ux431fa-am119";
-
+    private static final String PRODUCT_LINK_PROPERTY = TestDataReader.getTestData("testdata.product.link");
     @Test (enabled = true)
     public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
 //        System.out.println(System.getProperty("browser"));
-//        System.out.println(TestDataReader.getTestData("testdata.user.name"));
+        System.out.println(TestDataReader.getTestData("testdata.product.link"));
          String usualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
                  .acceptAlert()
-//                .pressCompareButtonForAdd()
                 .getUseualButtonPosition();
-//                .getIndicatorValueByActiveClass();
-        String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
+         String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
                 .checkInterferingNotifications()
                 .pressCompareButtonForAdd()
@@ -55,7 +51,7 @@ public class CompareButtonTest extends CommonConditions {
                 .openComparePage(driver)
                 .checkInterferingNotifications()
                 .findAddedElementDataId();
-        Assert.assertEquals(actualAddedElementDataId, new ProductPage(driver,PRODUCT_LINK_PROPERTY).returnDriverToTheProductPage().getDataId(),"there isn't compare object."+pageDataId);
+        Assert.assertEquals(actualAddedElementDataId, new ProductPage(driver,PRODUCT_LINK_PROPERTY).returnDriverToTheProductPage().getDataId(),"there isn't compare object.");
     }
 }
 //assertNotEquals

@@ -1,6 +1,5 @@
 package page;
 
-import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -16,7 +15,6 @@ public class MainPage extends AbstractPage
     private final Logger logger = LogManager.getRootLogger();
 
     private By searchBarInputLocator = By.xpath("//input[@id='q']");
-    private By searchType = By.xpath("//div[@class='multi-cell']/a/span[contains(text(), 'Ноутбуки')]");
     private By searchProduts = By.xpath("//div[@class='multi-content']//span");
 
     @FindBy (xpath = "//li[@class='top-bar-right-log _in']")
@@ -56,24 +54,16 @@ public class MainPage extends AbstractPage
         return new AuthorizationPage(driver);
     }
 
-//    public String getUserGreeting(){
-//        return greetingText.getText();
-//
-//    }
-
     public MainPage acceptAlert(){
         this.acceptAnyAlert();
         return this;
     }
 
-    public MainPage searchForQuery(String query, String queryType) {
+    public MainPage searchForQuery(String query) {
         searchBarInputButton.click();
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
                 until(ExpectedConditions.
                         presenceOfElementLocated(searchBarInputLocator)).sendKeys(query);
-//        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
-//                until(ExpectedConditions.
-//                        presenceOfElementLocated(searchType)).click();
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
                 until(ExpectedConditions.
                         elementToBeClickable(searchProduts));
@@ -82,11 +72,6 @@ public class MainPage extends AbstractPage
     }
 
     public String getFirstItemName() {
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         return searchFirstProduct.getText();
     }
 
