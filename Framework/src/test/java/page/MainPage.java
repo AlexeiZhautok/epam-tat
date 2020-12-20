@@ -15,13 +15,21 @@ public class MainPage extends AbstractPage
     private final String BASE_URL = "https://5element.by/";
     private final Logger logger = LogManager.getRootLogger();
 
-    private By usernameFieldLocator = By.xpath("//li[@class='top-bar-right-log ']");
+    private By searchBarInputLocator = By.xpath("//input[@id='q']");
+    private By searchType = By.xpath("//div[@class='multi-cell']/a/span[contains(text(), 'Ноутбуки')]");
+    private By searchProduts = By.xpath("//div[@class='multi-content']//span");
 
     @FindBy (xpath = "//li[@class='top-bar-right-log _in']")
     private WebElement logInButton;
 
     @FindBy (xpath = "//li[@class='top-bar-right-log ']/a/span")
     private WebElement greetingText;
+
+    @FindBy (xpath = "//div[@class='searchbox js-search-main']")
+    private WebElement searchBarInputButton;
+
+    @FindBy (xpath = "//div[@class='multi-content']//span")
+    private WebElement searchFirstProduct;
 
     public MainPage(WebDriver driver)
     {
@@ -57,4 +65,29 @@ public class MainPage extends AbstractPage
         this.acceptAnyAlert();
         return this;
     }
+
+    public MainPage searchForQuery(String query, String queryType) {
+        searchBarInputButton.click();
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
+                until(ExpectedConditions.
+                        presenceOfElementLocated(searchBarInputLocator)).sendKeys(query);
+//        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
+//                until(ExpectedConditions.
+//                        presenceOfElementLocated(searchType)).click();
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
+                until(ExpectedConditions.
+                        elementToBeClickable(searchProduts));
+        logger.info("Searching for " + query);
+        return this;
+    }
+
+    public String getFirstItemName() {
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        return searchFirstProduct.getText();
+    }
+
 }
