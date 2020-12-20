@@ -7,26 +7,25 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ComparePage {
+public class ComparePage extends AbstractPage{
     private final int WAIT_TIMEOUT_SECOND = 20;
 
     private WebDriver driver;
 
     public ComparePage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
     }
 
+    @Override
+    protected AbstractPage openPage() {
+        return null;
+    }
+
     public ComparePage checkInterferingNotifications(){
-        try {
-            new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='backdrop-close']")))
-                    .click();
-        }
-        catch (TimeoutException e){
-            System.out.println("На этой странице не было предупреждения");
-        }
+        this.deleteNotification();
         return this;
     }
 

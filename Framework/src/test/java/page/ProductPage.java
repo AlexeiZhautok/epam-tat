@@ -121,25 +121,12 @@ public class ProductPage extends AbstractPage {
     }
 
     public ProductPage checkInterferingNotifications(){
-        try {
-            new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='backdrop-close']")))
-                    .click();
-        }
-        catch (TimeoutException e){
-            System.out.println("На этой странице не было предупреждения");
-        }
+        deleteNotification();
         return this;
     }
 
     public ProductPage acceptAlert(){
-        try{
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
-        }
-        catch (NoAlertPresentException e){
-            System.out.println("Алёрта не было в этот раз");
-        }
+        this.acceptAnyAlert();
         return this;
     }
 }
