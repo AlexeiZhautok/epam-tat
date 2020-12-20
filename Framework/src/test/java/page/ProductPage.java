@@ -16,7 +16,7 @@ public class ProductPage extends AbstractPage {
     private final static String XPATH_FOR_ADD_TO_COMPARE_BUTTON = "//div[@class='btn-product-actions']/div[1]";
     private final static String XPATH_FOR_VALUE_INDICATOR = "//span[@id='compare-count-extra']";
     private final static String XPATH_FOR_LINK_TO_COMPARE_PAGE = "//div[@class='panel-fr-bottom']/a[1]";
-    
+
     private boolean isPress = false;
     private String itemPageURL;
 

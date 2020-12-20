@@ -1,9 +1,5 @@
 package test;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-
 import org.testng.annotations.*;
 import org.testng.Assert;
 
@@ -16,6 +12,7 @@ public class CompareButtonTest extends CommonConditions {
 
     @Test (enabled = true)
     public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
+        System.out.println(System.getProperty("browser"));
          String usualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
 //                .pressCompareButtonForAdd()
@@ -29,15 +26,6 @@ public class CompareButtonTest extends CommonConditions {
         Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work.");
     }
 
-//    @Test (enabled = true)
-//    public void valueOfTheCompareIndicatorWhenAdding2() throws InterruptedException {
-//        Thread.sleep(2000);
-//        String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
-//                .openPage()
-//                .pressCompareButtonForAdd()
-//                .getIndicatorValueByActiveClass();
-//        Assert.assertNotEquals(actualIndicatorValue, "1","Indicator does't work.");
-//    }
 
     @Test (enabled = false)
     public void valueOfTheCompareIndicatorWhenDelete() {
