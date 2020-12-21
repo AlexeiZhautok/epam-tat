@@ -5,20 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.Properties;
-
 public class DriverSingleton {
-
-    private static Properties prop;
-//    private Properties prop; // Global field
-//    private WebDriver driver;
 
     private static WebDriver driver;
 
 
     private DriverSingleton(){}
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver(){
         if (null == driver){
             String browserName = System.getProperty("browser");
             if(browserName == null) browserName = "chrom";
@@ -37,9 +31,8 @@ public class DriverSingleton {
         return driver;
     }
 
-    public static WebDriver closeDriver(){
+    public static void closeDriver(){
         driver.quit();
         driver = null;
-        return driver;
     }
 }
