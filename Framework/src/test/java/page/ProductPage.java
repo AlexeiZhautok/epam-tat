@@ -10,11 +10,13 @@ public class ProductPage extends AbstractPage {
     private final int WAIT_TIMEOUT_SECOND = 50;
 
     private final static String XPATH_FOR_ADD_TO_COMPARE_BUTTON = "//div[@class='btn-product-actions']/div[1]";
-    private final static String XPATH_FOR_VALUE_INDICATOR = "//span[@id='compare-count-extra']";
+//    private final static String XPATH_FOR_VALUE_INDICATOR = "//span[@id='compare-count-extra']";
     private final static String XPATH_FOR_LINK_TO_COMPARE_PAGE = "//div[@class='panel-fr-bottom']/a[1]";
 
-    private By searchOpenBucketPopup = By.xpath("//div[@class='white-popup precart-popup']//a[@class='button js-modal__footer-cell js-goto-cart']");
-    private By searchAddToBucketButton = By.xpath("//button[@class='spec-product-right-button button js-to-cart']");
+//    private By searchOpenBucketPopup = By.xpath("//div[@class='white-popup precart-popup']//a[@class='button js-modal__footer-cell js-goto-cart']");
+//    private By searchAddToBucketButton = By.xpath("//button[@class='spec-product-right-button button js-to-cart']");
+    private By findValueCompareIndicator = By.xpath("//span[@id='compare-count-extra']");
+    private By findValueViewIndicator = By.xpath("//span[@id='viewed-count']");
 
     private boolean isPress = false;
     private String itemPageURL;
@@ -44,7 +46,6 @@ public class ProductPage extends AbstractPage {
 
     @Override
     public ProductPage openPage() {
-        int t=0;
         driver.get(itemPageURL);
         return this;
     }
@@ -66,9 +67,9 @@ public class ProductPage extends AbstractPage {
 
     public ProductPage pressCompareButtonForAdd(){
         if(isPress) {
-            (new WebDriverWait(driver, 100))
+            (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
                     .until(ExpectedConditions
-                            .attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR), "class", "compare-count-active")); }
+                            .attributeContains(findValueCompareIndicator, "class", "compare-count-active")); }
         this.cliclToDescription();
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
@@ -77,26 +78,30 @@ public class ProductPage extends AbstractPage {
         return this; }
 
 
-//    public String getIndicatorValueById(){
+    public String getCompareIndicatorValueById(){
+        cliclToDescription();
 //        boolean r;
-//        r = (new WebDriverWait(driver, 100))
+//        r = (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
 //                .until(ExpectedConditions
 //                        .not(ExpectedConditions
 //                                .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='compare-count-active']"))));
-//        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR))).getText()); }
+        (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
+                .until(ExpectedConditions
+                        .attributeContains(findValueCompareIndicator, "class", "compare-count-active"));
+        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(findValueCompareIndicator)).getText()); }
 
-//    public String getIndicatorValueByActiveClass(){
-//        boolean isAttributeContains = false;
-//        while(!isAttributeContains){
-//            isAttributeContains = (new WebDriverWait(driver, 100))
-//                    .until(ExpectedConditions.attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR),"class","compare-count-active")); }
-//        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR))).getText()); }
+    public String getViewIndicatorValueById(){
+        cliclToDescription();
+//        (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
+//                    .until(ExpectedConditions
+//                            .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='viewed-count-active']")));
+        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(findValueViewIndicator)).getText()); }
 
     public ComparePage openComparePage(WebDriver driver){
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR)))
+                .until(ExpectedConditions.elementToBeClickable(findValueCompareIndicator))
                 .click();
-        driver.get(new WebDriverWait(driver, 100)
+        driver.get(new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_LINK_TO_COMPARE_PAGE)))
                 .getAttribute("href"));
         return new ComparePage(driver); }

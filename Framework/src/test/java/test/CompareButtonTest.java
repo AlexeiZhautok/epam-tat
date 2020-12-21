@@ -11,6 +11,21 @@ public class CompareButtonTest extends CommonConditions {
 
     private static final String PRODUCT_LINK_PROPERTY = TestDataReader.getTestData("testdata.product.link");
 
+    @Test (enabled = true)
+    public void valueOfTheCompareIndicatorWhenAdding(){
+//        System.out.println(System.getProperty("browser"));
+        String usualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
+                .openPage()
+                .acceptAlert()
+                .getUseualButtonPosition();
+        String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
+                .openPage()
+                .checkInterferingNotifications()
+                .pressCompareButtonForAdd()
+                .getUseualButtonPosition();
+        Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work.");
+    }
+
     @Test(enabled = true)
     public void compareButtonWorkingTest() {
 //        String usualButtonPosition = new ProductPage(driver)
