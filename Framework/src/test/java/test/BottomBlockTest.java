@@ -35,16 +35,16 @@ public class BottomBlockTest extends CommonConditions {
 //        Assert.assertEquals(actualIndicatorValue,"0", "Indicator does't work.");
 //    }
 //
-    @Test
-    public void testPresenceAfterViewing() {
-        String expected = new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY))
-                .openPage()
-                .getProductName();
-        String actual = new ViewedPage(driver)
-                .openPage()
-                .getFirstItemName();
-        Assert.assertEquals(expected, actual);
-    }
+//    @Test
+//    public void testPresenceAfterViewing() {
+//        String expected = new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY))
+//                .openPage()
+//                .getProductName();
+//        String actual = new ViewedPage(driver)
+//                .openPage()
+//                .getFirstItemName();
+//        Assert.assertEquals(expected, actual);
+//    }
 
 }
 
