@@ -10,35 +10,8 @@ import service.TestDataReader;
 public class CompareButtonTest extends CommonConditions {
 
     private static final String PRODUCT_LINK_PROPERTY = TestDataReader.getTestData("testdata.product.link");
-    @Test (enabled = true)
-    public void valueOfTheCompareIndicatorWhenAdding() throws InterruptedException {
-//        System.out.println(System.getProperty("browser"));
-        System.out.println(TestDataReader.getTestData("testdata.product.link"));
-         String usualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
-                .openPage()
-                 .acceptAlert()
-                .getUseualButtonPosition();
-         String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
-                .openPage()
-                .checkInterferingNotifications()
-                .pressCompareButtonForAdd()
-                .getUseualButtonPosition();
-        Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work.");
-    }
 
-
-    @Test (enabled = false)
-    public void valueOfTheCompareIndicatorWhenDelete() {
-        String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
-                .openPage()
-                .pressCompareButtonForAdd()
-                .pressCompareButtonForAdd()
-//                .pressCompareButtonForDelete()
-                .getIndicatorValueById();
-        Assert.assertEquals(actualIndicatorValue,"0", "Indicator does't work.");
-    }
-
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void compareButtonWorkingTest() {
 //        String usualButtonPosition = new ProductPage(driver)
 //                .openPage()

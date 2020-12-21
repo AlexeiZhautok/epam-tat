@@ -56,98 +56,67 @@ public class ProductPage extends AbstractPage {
     public String getUseualButtonPosition(){
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='_action-pic to-compare']")))
-                .getCssValue("background-position");
-    }
+                .getCssValue("background-position"); }
 
     public String getDataId(){
         this.cliclToDescription();
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
-                .getAttribute("data-id");
-    }
+                .getAttribute("data-id"); }
 
     public ProductPage pressCompareButtonForAdd(){
         if(isPress) {
             (new WebDriverWait(driver, 100))
                     .until(ExpectedConditions
-                            .attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR), "class", "compare-count-active"));
-        }
+                            .attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR), "class", "compare-count-active")); }
         this.cliclToDescription();
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
                 .click();
         isPress = !isPress;
-        return this;
-    }
+        return this; }
 
 
-    public String getIndicatorValueById(){
-        boolean r;
-        r = (new WebDriverWait(driver, 100))
-                .until(ExpectedConditions
-                        .not(ExpectedConditions
-                                .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='compare-count-active']"))));
-//        this.cliclToDescription();
-        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR))).getText());
-    }
+//    public String getIndicatorValueById(){
+//        boolean r;
+//        r = (new WebDriverWait(driver, 100))
+//                .until(ExpectedConditions
+//                        .not(ExpectedConditions
+//                                .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='compare-count-active']"))));
+//        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR))).getText()); }
 
-    public String getIndicatorValueByActiveClass(){
-        boolean isAttributeContains = false;
-        while(!isAttributeContains){
-            isAttributeContains = (new WebDriverWait(driver, 100))
-                    .until(ExpectedConditions.attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR),"class","compare-count-active"));
-        }
-//        this.cliclToDescription();
-        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR))).getText());
-    }
+//    public String getIndicatorValueByActiveClass(){
+//        boolean isAttributeContains = false;
+//        while(!isAttributeContains){
+//            isAttributeContains = (new WebDriverWait(driver, 100))
+//                    .until(ExpectedConditions.attributeContains(By.xpath(XPATH_FOR_VALUE_INDICATOR),"class","compare-count-active")); }
+//        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR))).getText()); }
 
     public ComparePage openComparePage(WebDriver driver){
-//        this.cliclToDescription();
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR)))
                 .click();
         driver.get(new WebDriverWait(driver, 100)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_LINK_TO_COMPARE_PAGE)))
                 .getAttribute("href"));
-        return new ComparePage(driver);
-    }
+        return new ComparePage(driver); }
 
     public ProductPage returnDriverToTheProductPage(){
         driver.get(itemPageURL);
-        return this;
-    }
+        return this; }
 
     public ProductPage checkInterferingNotifications(){
         deleteNotification();
-        return this;
-    }
+        return this; }
 
 
     public ProductPage acceptAlert(){
         this.acceptAnyAlert();
-        return this;
-    }
+        return this; }
 
 
     public ProductPage addItemToBucket(){
         addToBucket.click();
-//        new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-//                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_VALUE_INDICATOR)))
-//                .click();
-//        driver.get(new WebDriverWait(driver, 100)
-//                .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_LINK_TO_COMPARE_PAGE)))
-//                .getAttribute("href"));
         return this;
     }
-
-//    public BucketPage openBucketPageFromProductPopup(){
-//        (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
-//                .until(ExpectedConditions.elementToBeClickable(searchOpenBucketPopup));
-//        a.click();
-//        addToBucket.click();
-//        WebElement er = new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
-//                .until(ExpectedConditions.elementToBeClickable(searchOpenBucketPopup));
-//        driver.get(er.getAttribute("href"));
-//        return new BucketPage(driver);
-//    }
 }
