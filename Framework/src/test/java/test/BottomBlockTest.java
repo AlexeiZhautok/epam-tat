@@ -24,7 +24,6 @@ public class BottomBlockTest extends CommonConditions {
                 .openPage()
                 .acceptAlert()
                 .getViewIndicatorValueById();
-        System.out.println(actualIndicatorValue);
         Assert.assertEquals(actualIndicatorValue, "1","Indicator does't work."); } }
 
 

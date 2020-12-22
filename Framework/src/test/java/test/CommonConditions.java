@@ -3,6 +3,7 @@ package test;
 
 import driver.DriverSingleton;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import util.TestListener;
 
@@ -15,8 +16,14 @@ public class CommonConditions {
 
     @BeforeTest(alwaysRun = true)
     public void setUp() {
-        driver = DriverSingleton.getDriver(); }
+//        driver = DriverSingleton.getDriver();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
 
     @AfterTest(alwaysRun = true)
     public void stopBrowser() {
-        DriverSingleton.closeDriver(); } }
+//        DriverSingleton.closeDriver();
+        driver.quit();
+    }
+}
