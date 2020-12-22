@@ -31,7 +31,12 @@ public class ProductPage extends AbstractPage {
 
     @Override
     public ProductPage openPage() {
-        driver.get(itemPageURL);
+        try {
+            driver.get(itemPageURL);
+        }
+        catch (NullPointerException e){
+            System.out.println(itemPageURL);
+        }
         return this; }
 
     private void cliclToDescription(){
