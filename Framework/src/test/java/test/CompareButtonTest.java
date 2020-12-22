@@ -23,7 +23,8 @@ public class CompareButtonTest extends CommonConditions {
                 .checkInterferingNotifications()
                 .pressCompareButtonForAdd()
                 .getUseualButtonPosition();
-        Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work."); }
+        Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work.");
+    }
 
     @Test(enabled = true)
     public void compareButtonWorkingTest() {

@@ -13,7 +13,6 @@ public class SearchTest extends CommonConditions {
     @Test
     public void findProductAfterSearchTest() {
         String expected = TestDataReader.getTestData(QUERY_PROPERTY);
-        String type = TestDataReader.getTestData(QUERY_PROPERTY);
         String actual = new MainPage(driver)
                 .openPage()
                 .acceptAlert()
