@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class UserLogInTest extends CommonConditions {
     @Test
-    public void testCorrectLogIn() {
+    public void correctLogInTest() {
         User user = UserCreator.withCredentialsFromProperty();
         String expected = user.getEmail();
         new MainPage(driver)

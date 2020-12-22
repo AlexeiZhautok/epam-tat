@@ -11,7 +11,7 @@ public class FilterTest extends CommonConditions {
     private static final String PARAMETR_PROPERTY = "testdata.catalog.parameter";
 
     @Test
-    public void testPresenceAfterApplyingFilter() {
+    public void presenceAfterApplyingFilterTest() {
         String expected = TestDataReader.getTestData(PARAMETR_PROPERTY);
         String actual = new CatalogPage(driver, TestDataReader.getTestData(CATALOG_LINK_PROPERTY))
                 .openPage()

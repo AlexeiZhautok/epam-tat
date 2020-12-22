@@ -36,7 +36,8 @@ public class CatalogPage extends AbstractPage  {
     }
 
     public CatalogPage setParametr (String parametr) {
-        WebElement buf = driver.findElement(By.xpath("//li[@data-id='BRAND']/../li[4]"));
+//        (//div[@class='product-middle-patio-code product-middle-patio-code-desktop'])[2]
+        WebElement buf = driver.findElement(By.xpath("//*[@id=\"categoryProductList\"]/div[3]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]"));
         Actions actions = new Actions(driver);
         actions.moveToElement(buf);
         actions.perform();

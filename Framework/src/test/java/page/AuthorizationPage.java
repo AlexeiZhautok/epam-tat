@@ -48,12 +48,8 @@ public class AuthorizationPage extends AbstractPage {
         loginByEmailButton.click();
         emailInput.sendKeys(user.getEmail());
         passwordInput.sendKeys(user.getPassword());
-        WebElement scroll = driver.findElement(By.xpath("//footer[@class='footer']//div[2]"));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(scroll);
-        actions.perform();
-        rememberMeCheckbox.click();
         scrollDown.click();
+        rememberMeCheckbox.click();
         logInSubmitButton.click();
         return new MainPage(driver); }
 
