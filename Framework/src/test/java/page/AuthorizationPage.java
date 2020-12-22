@@ -44,6 +44,16 @@ public class AuthorizationPage extends AbstractPage {
         return null;
     }
 
+//    public MainPage logIn(User user) {
+//        loginByEmailButton.click();
+//        emailInput.sendKeys(user.getEmail());
+//        passwordInput.sendKeys(user.getPassword());
+//        rememberMeCheckbox.click();
+//        scrollDown.click();
+//        logInSubmitButton.click();
+//        return new MainPage(driver); }
+
+//CI
     public MainPage logIn(User user) {
         loginByEmailButton.click();
         emailInput.sendKeys(user.getEmail());
