@@ -2,6 +2,7 @@ package test;
 
 
 import driver.DriverSingleton;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -17,6 +18,8 @@ public class CommonConditions {
     @BeforeTest(alwaysRun = true)
     public void setUp() {
 //        driver = DriverSingleton.getDriver();
+
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
