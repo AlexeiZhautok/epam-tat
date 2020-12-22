@@ -23,6 +23,9 @@ public class CatalogPage extends AbstractPage  {
     @FindBy(xpath = "//div[@class='spec-product-middle']//a")
     private WebElement firstItemName;
 
+    @FindBy(xpath = "//div[@class='sidebar-filter-title-text']")
+    private WebElement openFilter;
+
     public CatalogPage(WebDriver driver, String url) {
         super(driver);
         itemPageURL = url;
@@ -35,9 +38,21 @@ public class CatalogPage extends AbstractPage  {
         return this;
     }
 
+//    public CatalogPage setParametr (String parametr) {
+//        WebElement buf = driver.findElement(By.xpath("//*[@id=\"categoryProductList\"]/div[3]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]"));
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(buf);
+//        actions.perform();
+//        shoewMoreBrends.click();
+//        WebElement checkbox = driver
+//                .findElement(By.xpath("//li[@data-id='BRAND']//label[text()[contains(.,'" + parametr + "')]]"));
+//        checkbox.click();
+//        return this; }
+
+//for CI
     public CatalogPage setParametr (String parametr) {
-//        (//div[@class='product-middle-patio-code product-middle-patio-code-desktop'])[2]
-        WebElement buf = driver.findElement(By.xpath("//*[@id=\"categoryProductList\"]/div[3]/div[2]/div/div[1]/div[1]/div[2]/div/div[2]"));
+        openFilter.click();
+        WebElement buf = driver.findElement(By.xpath("//*[@id=\"smartFilter\"]/ul/li/div[3]/ul/li[5]/div[1]/div[1]/span"));
         Actions actions = new Actions(driver);
         actions.moveToElement(buf);
         actions.perform();
