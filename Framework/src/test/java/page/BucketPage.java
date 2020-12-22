@@ -17,16 +17,8 @@ public class BucketPage extends AbstractPage {
         super(driver);
     }
 
-//    private By submitPromoCodeButtonLocator = By.xpath("//button[@class='btn js-bind-promo_submit btn-orange']");
-
     @FindBy(xpath = "//div[@id='stepCartFirst']/div[2]")
     private WebElement firstAddedProduct;
-
-//    @FindBy(xpath = "//input[@class='order-footer__input-promo']")
-//    private WebElement promocodeInput;
-//
-//    @FindBy(xpath = "//span[@class='order-footer__value order-footer__value--cart-bonus']")
-//    private WebElement finalPriceString;
 
     @Override
     public BucketPage openPage() {

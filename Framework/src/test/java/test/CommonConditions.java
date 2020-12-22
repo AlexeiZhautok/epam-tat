@@ -18,16 +18,11 @@ public class CommonConditions {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         driver = DriverSingleton.getDriver();
-
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
     }
 
 
     @AfterClass(alwaysRun = true)
     public void stopBrowser() {
         DriverSingleton.closeDriver();
-//        driver.quit();
     }
 }

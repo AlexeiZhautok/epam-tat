@@ -63,8 +63,6 @@ public class CatalogPage extends AbstractPage  {
         return this; }
 
     public CatalogPage openParameterizedCatalogPage(String url){
-//        (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-//                .until(ExpectedConditions.elementToBeClickable(applyFilterButton)).click();
         driver.get(url + "/brand=zte");
         return this; }
 
