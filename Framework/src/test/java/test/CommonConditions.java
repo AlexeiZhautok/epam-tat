@@ -15,16 +15,8 @@ public class CommonConditions {
 
     @BeforeTest(alwaysRun = true)
     public void setUp() {
-        driver = DriverSingleton.getDriver();
-    }
-
-//    @AfterMethod(alwaysRun = true)
-//    public void browserClose() {
-//        driver.close();
-//    }
+        driver = DriverSingleton.getDriver(); }
 
     @AfterTest(alwaysRun = true)
     public void stopBrowser() {
-        DriverSingleton.closeDriver();
-    }
-}
+        DriverSingleton.closeDriver(); } }

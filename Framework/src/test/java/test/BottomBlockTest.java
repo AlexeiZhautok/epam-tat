@@ -16,8 +16,7 @@ public class BottomBlockTest extends CommonConditions {
                 .acceptAlert()
                 .pressCompareButtonForAdd()
                 .getCompareIndicatorValueById();
-        Assert.assertEquals(actualIndicatorValue,"1", "Indicator does't work.");
-    }
+        Assert.assertEquals(actualIndicatorValue,"1", "Indicator does't work."); }
 
     @Test (enabled = true)
     public void valueOfViewIndicatorTest(){
@@ -26,32 +25,6 @@ public class BottomBlockTest extends CommonConditions {
                 .acceptAlert()
                 .getViewIndicatorValueById();
         System.out.println(actualIndicatorValue);
-        Assert.assertEquals(actualIndicatorValue, "1","Indicator does't work.");
-    }
-}
-//
-//
-//    @Test (enabled = false)
-//    public void valueOfTheCompareIndicatorWhenDelete() {
-//        String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
-//                .openPage()
-//                .pressCompareButtonForAdd()
-//                .pressCompareButtonForAdd()
-////                .pressCompareButtonForDelete()
-//                .getIndicatorValueById();
-//        Assert.assertEquals(actualIndicatorValue,"0", "Indicator does't work.");
-//    }
-//
-//    @Test
-//    public void testPresenceAfterViewing() {
-//        String expected = new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY))
-//                .openPage()
-//                .getProductName();
-//        String actual = new ViewedPage(driver)
-//                .openPage()
-//                .getFirstItemName();
-//        Assert.assertEquals(expected, actual);
-//    }
-
+        Assert.assertEquals(actualIndicatorValue, "1","Indicator does't work."); } }
 
 

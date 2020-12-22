@@ -35,27 +35,11 @@ public class BucketPage extends AbstractPage {
         return this;
     }
 
-//    public BucketPage applyPromocode(String promoCode) {
-//        promocodeInput.sendKeys(promoCode);
-//        WebElement applyPromocodeButton = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-//                .until(ExpectedConditions.presenceOfElementLocated(submitPromoCodeButtonLocator));
-//        String oldPrice = finalPriceString.getText();
-//        applyPromocodeButton.click();
-//        logger.info("Applied promocode " + promoCode + " to an item");
-//        (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)).
-//                until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(finalPriceString, oldPrice)));
-//        return this;
-//    }
-//
     public String getFirstProductDataId() {
         return firstAddedProduct.getAttribute("data-id");
     }
-//
-//    public BucketPage(WebDriver driver) {
-//        super(driver);
-//    }
-//
-//    public String getFirstItemName() {
-//        return firstDesiredItem.getText();
-//    }
+
+    public BucketPage acceptAlert(){
+        this.acceptAnyAlert();
+        return this; }
 }

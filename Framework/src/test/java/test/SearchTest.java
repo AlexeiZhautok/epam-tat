@@ -20,6 +20,4 @@ public class SearchTest extends CommonConditions {
                 .searchForQuery(expected)
                 .getFirstItemName();
         LogManager.getRootLogger().info("Checking that '" + actual + "' contatins '" + expected + "'");
-        Assert.assertTrue(actual.toLowerCase().contains(expected.toLowerCase()));
-    }
-}
+        Assert.assertTrue(actual.toLowerCase().contains(expected.toLowerCase())); } }

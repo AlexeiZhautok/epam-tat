@@ -13,33 +13,25 @@ public class CompareButtonTest extends CommonConditions {
 
     @Test (enabled = true)
     public void valueOfTheCompareIndicatorWhenAdding(){
-//        System.out.println(System.getProperty("browser"));
         String usualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
                 .acceptAlert()
                 .getUseualButtonPosition();
         String actualIndicatorValue = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
+                .acceptAlert()
                 .checkInterferingNotifications()
                 .pressCompareButtonForAdd()
                 .getUseualButtonPosition();
-        Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work.");
-    }
+        Assert.assertNotEquals(usualIndicatorValue, actualIndicatorValue,"Indicator does't work."); }
 
     @Test(enabled = true)
     public void compareButtonWorkingTest() {
-//        String usualButtonPosition = new ProductPage(driver)
-//                .openPage()
-//                .getUseualButtonPosition();
-//        System.out.println(usualButtonPosition);
         String actualAddedElementDataId = new ProductPage(driver,PRODUCT_LINK_PROPERTY)
                 .openPage()
-//                .checkInterferingNotifications()
+                .acceptAlert()
                 .pressCompareButtonForAdd()
                 .openComparePage(driver)
                 .checkInterferingNotifications()
                 .findAddedElementDataId();
-        Assert.assertEquals(actualAddedElementDataId, new ProductPage(driver,PRODUCT_LINK_PROPERTY).returnDriverToTheProductPage().getDataId(),"there isn't compare object.");
-    }
-}
-//assertNotEquals
+        Assert.assertEquals(actualAddedElementDataId, new ProductPage(driver,PRODUCT_LINK_PROPERTY).returnDriverToTheProductPage().getDataId(),"there isn't compare object."); } }

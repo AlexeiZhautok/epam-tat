@@ -24,18 +24,14 @@ public class AuthorizationPage extends AbstractPage {
     @FindBy (xpath = "//input[@name='PASSWORD']")
     private WebElement passwordInput;
 
-//    @FindBy (xpath = "//input[@id='checkbox-1']")
     @FindBy (xpath = "//input[@id='checkbox-1']/../div/label")
     private WebElement rememberMeCheckbox;
 
     @FindBy (xpath = "//a[@class='button js-submit']")
     private WebElement logInSubmitButton;
 
-        @FindBy (xpath = "//div[@class='line-wrapper']/div/div/p")
+    @FindBy (xpath = "//div[@class='line-wrapper']/div/div/p")
     private WebElement scrollDown;
-
-//    private By usernameFieldLocator = By.xpath("//li[@class='top-bar-right-log ']");
-
 
     public AuthorizationPage(WebDriver driver)
     {
@@ -54,9 +50,9 @@ public class AuthorizationPage extends AbstractPage {
         rememberMeCheckbox.click();
         scrollDown.click();
         logInSubmitButton.click();
-//        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).
-//                until(ExpectedConditions.
-//                        presenceOfElementLocated(usernameFieldLocator));
-        return new MainPage(driver);
-    }
+        return new MainPage(driver); }
+
+    public AuthorizationPage acceptAlert(){
+        this.acceptAnyAlert();
+        return this; }
 }

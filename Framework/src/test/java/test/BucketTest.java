@@ -15,9 +15,8 @@ public class BucketTest extends CommonConditions {
 
         (new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY)))
                 .openPage()
+                .acceptAlert()
                 .addItemToBucket();
         String actual = new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY)).getDataId();
         String expected =  new BucketPage(driver).openPage().getFirstProductDataId();
-        Assert.assertEquals(expected, actual);
-    }
-}
+        Assert.assertEquals(expected, actual); } }

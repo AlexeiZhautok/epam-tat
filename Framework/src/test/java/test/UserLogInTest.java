@@ -20,7 +20,6 @@ public class UserLogInTest extends CommonConditions {
         String actual = new ProfilePage(driver)
                 .checkInterferingNotifications()
                 .openPage()
+                .acceptAlert()
                 .getUserEmailFieldText();
-        Assert.assertEquals(expected, actual);
-    }
-}
+        Assert.assertEquals(expected, actual); } }

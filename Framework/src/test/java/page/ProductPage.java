@@ -10,11 +10,8 @@ public class ProductPage extends AbstractPage {
     private final int WAIT_TIMEOUT_SECOND = 50;
 
     private final static String XPATH_FOR_ADD_TO_COMPARE_BUTTON = "//div[@class='btn-product-actions']/div[1]";
-//    private final static String XPATH_FOR_VALUE_INDICATOR = "//span[@id='compare-count-extra']";
     private final static String XPATH_FOR_LINK_TO_COMPARE_PAGE = "//div[@class='panel-fr-bottom']/a[1]";
 
-//    private By searchOpenBucketPopup = By.xpath("//div[@class='white-popup precart-popup']//a[@class='button js-modal__footer-cell js-goto-cart']");
-//    private By searchAddToBucketButton = By.xpath("//button[@class='spec-product-right-button button js-to-cart']");
     private By findValueCompareIndicator = By.xpath("//span[@id='compare-count-extra']");
     private By findValueViewIndicator = By.xpath("//span[@id='viewed-count']");
 
@@ -23,47 +20,37 @@ public class ProductPage extends AbstractPage {
 
     public ProductPage(WebDriver driver, String url) {
         super(driver);
-        itemPageURL = url;
-    }
+        itemPageURL = url; }
 
     @FindBy(xpath = "//section[@id='description']")
     private WebElement productDescriptionFind;
 
-//    @FindBy(xpath = XPATH_FOR_ADD_TO_COMPARE_BUTTON)
-//    private WebElement compareButtonFind;
-//
-//    @FindBy(xpath = XPATH_FOR_VALUE_INDICATOR)
-//    private WebElement valueIndicatoOfCompareProduct;
-//
-//    @FindBy(xpath = XPATH_FOR_LINK_TO_COMPARE_PAGE)
-//    private WebElement openComparePageBytton;
-
-    @FindBy(xpath = "//button[@class='spec-product-right-button button js-to-cart']")
+    @FindBy(xpath = "//button[starts-with(@class, \"spec-product-right-button\")]")
     private WebElement addToBucket;
-//    @FindBy(xpath = "//div[@class='js-modal__footer-summary js-summary']")
-//    private WebElement a;
 
 
     @Override
     public ProductPage openPage() {
         driver.get(itemPageURL);
-        return this;
-    }
+        return this; }
 
     private void cliclToDescription(){
         productDescriptionFind.click();
     }
+
 
     public String getUseualButtonPosition(){
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='_action-pic to-compare']")))
                 .getCssValue("background-position"); }
 
+
     public String getDataId(){
         this.cliclToDescription();
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(XPATH_FOR_ADD_TO_COMPARE_BUTTON)))
                 .getAttribute("data-id"); }
+
 
     public ProductPage pressCompareButtonForAdd(){
         if(isPress) {
@@ -80,22 +67,16 @@ public class ProductPage extends AbstractPage {
 
     public String getCompareIndicatorValueById(){
         cliclToDescription();
-//        boolean r;
-//        r = (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
-//                .until(ExpectedConditions
-//                        .not(ExpectedConditions
-//                                .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='compare-count-active']"))));
         (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
                 .until(ExpectedConditions
                         .attributeContains(findValueCompareIndicator, "class", "compare-count-active"));
         return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(findValueCompareIndicator)).getText()); }
 
+
     public String getViewIndicatorValueById(){
         cliclToDescription();
-//        (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND))
-//                    .until(ExpectedConditions
-//                            .presenceOfAllElementsLocatedBy(By.xpath("//span[@class='viewed-count-active']")));
         return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(findValueViewIndicator)).getText()); }
+
 
     public ComparePage openComparePage(WebDriver driver){
         new WebDriverWait(driver, WAIT_TIMEOUT_SECOND)
@@ -106,9 +87,11 @@ public class ProductPage extends AbstractPage {
                 .getAttribute("href"));
         return new ComparePage(driver); }
 
+
     public ProductPage returnDriverToTheProductPage(){
         driver.get(itemPageURL);
         return this; }
+
 
     public ProductPage checkInterferingNotifications(){
         deleteNotification();
@@ -122,6 +105,5 @@ public class ProductPage extends AbstractPage {
 
     public ProductPage addItemToBucket(){
         addToBucket.click();
-        return this;
-    }
+        return this; }
 }

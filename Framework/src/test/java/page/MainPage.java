@@ -39,25 +39,15 @@ public class MainPage extends AbstractPage
     {
         driver.get(BASE_URL);
         logger.info("Opened page " + BASE_URL);
-        return this;
-    }
-
-//    public SearchPage searchForQuery(String query) {
-//        searchBarInput.sendKeys(query);
-//        searchBarButton.click();
-//        logger.info("Searching for " + query);
-//        return new SearchPage(driver);
-//    }
+        return this; }
 
     public AuthorizationPage openLogInDialog() {
         logInButton.click();
-        return new AuthorizationPage(driver);
-    }
+        return new AuthorizationPage(driver); }
 
     public MainPage acceptAlert(){
         this.acceptAnyAlert();
-        return this;
-    }
+        return this; }
 
     public MainPage searchForQuery(String query) {
         searchBarInputButton.click();
@@ -68,8 +58,7 @@ public class MainPage extends AbstractPage
                 until(ExpectedConditions.
                         elementToBeClickable(searchProduts));
         logger.info("Searching for " + query);
-        return this;
-    }
+        return this; }
 
     public String getFirstItemName() {
         return searchFirstProduct.getText();

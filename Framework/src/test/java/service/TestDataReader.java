@@ -8,5 +8,4 @@ public class TestDataReader {
 
     public static String getTestData(String key){
         return resourceBundle.getString(key);
-    }
-}
+    } }

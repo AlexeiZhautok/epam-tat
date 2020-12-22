@@ -19,12 +19,10 @@ public class ProfilePage extends AbstractPage {
     }
 
     @Override
-    public ProfilePage openPage()
-    {
+    public ProfilePage openPage() {
         driver.get(BASE_URL);
         logger.info("Opened page " + BASE_URL);
-        return this;
-    }
+        return this; }
 
 
     public String getUserEmailFieldText() {
@@ -33,6 +31,9 @@ public class ProfilePage extends AbstractPage {
 
     public ProfilePage checkInterferingNotifications(){
         deleteNotification();
-        return this;
-    }
+        return this; }
+
+    public ProfilePage acceptAlert(){
+        this.acceptAnyAlert();
+        return this; }
 }

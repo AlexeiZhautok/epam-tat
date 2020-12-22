@@ -15,9 +15,7 @@ public class ComparePage extends AbstractPage{
     public ComparePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver, this);
-
-    }
+        PageFactory.initElements(driver, this); }
 
     @Override
     protected AbstractPage openPage() {
@@ -26,10 +24,12 @@ public class ComparePage extends AbstractPage{
 
     public ComparePage checkInterferingNotifications(){
         this.deleteNotification();
-        return this;
-    }
+        return this; }
 
     public String findAddedElementDataId(){
-        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='product-item product-item-shortblock item js-product-item']"))).getAttribute("data-id"));
-    }
+        return (new WebDriverWait(driver, WAIT_TIMEOUT_SECOND).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='product-item product-item-shortblock item js-product-item']"))).getAttribute("data-id")); }
+
+    public ComparePage acceptAlert(){
+        this.acceptAnyAlert();
+        return this; }
 }
