@@ -26,9 +26,9 @@ public class DriverSingleton {
                     driver = new ChromeDriver();
                 }
             }
-            driver.manage().window().maximize();
+//            driver.manage().window().maximize();
         }
-        driver.manage().window().fullscreen();
+//        driver.manage().window().maximize();
         return driver;
     }
 
