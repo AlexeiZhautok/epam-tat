@@ -28,7 +28,7 @@ public class DriverSingleton {
             }
             driver.manage().window().maximize();
         }
-        driver.manage().window().maximize();
+        driver.manage().window().fullscreen();
         return driver;
     }
 
