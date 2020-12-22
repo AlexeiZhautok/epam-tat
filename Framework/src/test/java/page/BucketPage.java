@@ -36,10 +36,16 @@ public class BucketPage extends AbstractPage {
     }
 
     public String getFirstProductDataId() {
+        new WebDriverWait(driver, 30)
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='stepCartFirst']/div[2]")));
         return firstAddedProduct.getAttribute("data-id");
     }
 
     public BucketPage acceptAlert(){
         this.acceptAnyAlert();
+        return this; }
+
+    public BucketPage checkInterferingNotifications(){
+        deleteNotification();
         return this; }
 }

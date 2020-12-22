@@ -31,13 +31,7 @@ public class ProductPage extends AbstractPage {
 
     @Override
     public ProductPage openPage() {
-        try {
-            driver.get(itemPageURL);
-        }
-        catch (NullPointerException e){
-            System.out.println(itemPageURL);
-            driver.get("https://5element.by/products/681507-ultrabuk-asus-zenbook-14-ux431fa-am119");
-        }
+        driver.get("https://5element.by/products/681507-ultrabuk-asus-zenbook-14-ux431fa-am119");
         return this; }
 
     private void cliclToDescription(){
@@ -111,5 +105,7 @@ public class ProductPage extends AbstractPage {
 
     public ProductPage addItemToBucket(){
         addToBucket.click();
+        new WebDriverWait(driver, 30)
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='cart-large-remove button small secondary js-remove-from-cart']")));
         return this; }
 }

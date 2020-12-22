@@ -12,11 +12,16 @@ public class BucketTest extends CommonConditions {
 
     @Test
     public void findInBucketAfterAddingTest() {
-
+        String actual = new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY))
+                .openPage()
+                .acceptAlert()
+                .getDataId();
         (new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY)))
                 .openPage()
                 .acceptAlert()
                 .addItemToBucket();
-        String actual = new ProductPage(driver, TestDataReader.getTestData(PRODUCT_LINK_PROPERTY)).getDataId();
-        String expected =  new BucketPage(driver).openPage().getFirstProductDataId();
+        String expected =  new BucketPage(driver)
+                .openPage()
+                .checkInterferingNotifications()
+                .getFirstProductDataId();
         Assert.assertEquals(expected, actual); } }

@@ -15,18 +15,19 @@ public class CommonConditions {
 
     protected WebDriver driver;
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
-//        driver = DriverSingleton.getDriver();
+        driver = DriverSingleton.getDriver();
 
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
     }
 
-    @AfterTest(alwaysRun = true)
+
+    @AfterClass(alwaysRun = true)
     public void stopBrowser() {
-//        DriverSingleton.closeDriver();
-        driver.quit();
+        DriverSingleton.closeDriver();
+//        driver.quit();
     }
 }
