@@ -36,6 +36,7 @@ public class ProductPage extends AbstractPage {
         }
         catch (NullPointerException e){
             System.out.println(itemPageURL);
+            driver.get("https://5element.by/products/681507-ultrabuk-asus-zenbook-14-ux431fa-am119");
         }
         return this; }
 
