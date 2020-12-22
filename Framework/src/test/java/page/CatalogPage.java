@@ -23,7 +23,7 @@ public class CatalogPage extends AbstractPage  {
     @FindBy(xpath = "//div[@class='spec-product-middle']//a")
     private WebElement firstItemName;
 
-    @FindBy(xpath = "//span[@class='sidebar-filter-title-text']")
+    @FindBy(xpath = "//div[@class='sidebar-filter-title']/span")
     private WebElement openFilter;
 
     public CatalogPage(WebDriver driver, String url) {
